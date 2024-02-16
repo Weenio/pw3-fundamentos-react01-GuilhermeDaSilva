@@ -28,6 +28,14 @@
   color: #61dafb;
 }
 
+.cardBook{
+  padding: 5px;
+  width: 250px;
+  border-radius: 10px;
+  margin: 5px;
+  background-color: aliceblue;
+}
+
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);
