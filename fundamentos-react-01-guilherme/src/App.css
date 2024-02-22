@@ -29,11 +29,22 @@
 }
 
 .cardBook{
-  padding: 5px;
-  width: 250px;
+  padding: 15px;
+  width: 999px;
   border-radius: 10px;
-  margin: 5px;
-  background-color: aliceblue;
+  margin: auto;
+  background-color: rgb(22, 121, 207);
+  text-align: center;
+  align-items: center;
+}
+
+.miniatura{
+  width: 50%;
+  height: 50%;
+}
+
+.resumoLivro{
+  font-size: small;
 }
 
 @keyframes App-logo-spin {
