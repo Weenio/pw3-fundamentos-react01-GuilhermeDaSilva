@@ -1,14 +1,18 @@
 import '../App.css';
 
-function CardLivro(titulo, autor, img, descrincao) {
+function CardLivro({dadosJSON}) {
   return (
     <>
-        <div className="cardBook">
-            <h3>{titulo}</h3>
-            <p>{autor}</p>
-            <img src={img} alt='capa do livro' className="miniatura"></img>
-            <p className="resumoLivro">{descrincao}</p>
-        </div>
+        {dadosJSON.map((livro) => (
+          <div className="cardBook">
+            <h3>{livro.titulo}</h3>
+            <p>{livro.autor}</p>
+            <img src={livro.imagem} alt='capa do livro' className="miniatura"></img>
+            <p className="resumoLivro">
+              {livro.descricao}
+            </p>
+          </div>
+        ))}
     </>
   );
 }
