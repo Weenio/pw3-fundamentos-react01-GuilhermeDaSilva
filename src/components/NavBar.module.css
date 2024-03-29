@@ -10,10 +10,10 @@
 }
 
 .item a{
-    color: aliceblue;
+    color: #0310fe;
     text-decoration: none;
 }
 
-item a:hover{
-    color:darkcyan;
+.item a:hover{
+    color:darkcyan
 }
