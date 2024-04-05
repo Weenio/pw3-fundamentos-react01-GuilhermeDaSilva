@@ -2,7 +2,7 @@ import styles from './Input.module.css';
 
 export default function Input({type, text, name, placeholder, handlerOnChange, value}){
     return(
-        <div>
+        <div className={styles.form_control}>
 
             <label htmlFor={name}>{text}</label>
             <input
@@ -11,7 +11,7 @@ export default function Input({type, text, name, placeholder, handlerOnChange, v
                 name={name}
                 id={name}
                 placeholder={placeholder}
-                OnChange={handlerOnChange}
+                onChange={handlerOnChange}
                 value={value}
             />
         </div>
