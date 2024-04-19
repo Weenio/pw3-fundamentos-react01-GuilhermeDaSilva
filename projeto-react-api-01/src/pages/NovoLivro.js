@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 import Input from '../components/form/Input.js';
 import Select from '../components/form/Select.js';
@@ -9,6 +10,7 @@ export default function NovoLivro(){
 
     const [categorias, setCategorias] = useState([]);
     const [livro, setLivro] = useState({})
+    const navigate = useNavigate();
 
     useEffect(() => {
 
@@ -35,19 +37,19 @@ export default function NovoLivro(){
 
     function handlerChangeBook(event){
 
-        setLivro({... livro, [event.target.name] : [event.target.value]});
+        setLivro({...livro, [event.target.name] : [event.target.value]});
 
     }
 
     function handlerChangeCategory(event){
 
-        setLivro({... livro, category : {
+        setLivro({...livro, category : {
             id: event.target.name,
             category: event.target.options[event.target.selectedIndex].text
         }});
     }
 
-    function createLivro(livro){
+    function CreateLivro(livro){
         fetch(
             'http://localhost:5000/books',
             {
@@ -61,6 +63,7 @@ export default function NovoLivro(){
         ).then(
             (data) => {
                 console.log(data)
+                navigate('/livros', {state:'Livro cadastrado!'})
             }
         ).catch(
             (err) => {
@@ -71,7 +74,7 @@ export default function NovoLivro(){
 
     function submit(event){
         event.preventDefault();
-        createLivro(livro);
+        CreateLivro(livro);
     }
 
     console.log(livro)
