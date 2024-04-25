@@ -1,147 +1,19 @@
 {
   "books": [
     {
-      "id": "e5ea",
+      "id": "5c07",
       "livroNome": [
-        "a"
+        "LIVRO 1"
       ],
-      "Nome do Autor": [
-        "a"
+      "autorNome": [
+        "AUTOR 1"
       ],
-      "Descrição": [
-        "a"
-      ],
-      "category": {
-        "id": "catecoriaID",
-        "category": "FRONT-END"
-      }
-    },
-    {
-      "id": "8390",
-      "livroNome": [
-        "a"
-      ],
-      "Nome do Autor": [
-        "a"
-      ],
-      "Descrição": [
-        "a"
-      ],
-      "category": {
-        "id": "catecoriaID",
-        "category": "FRONT-END"
-      }
-    },
-    {
-      "id": "d233",
-      "livroNome": [
-        "a"
-      ],
-      "Nome do Autor": [
-        "a"
-      ],
-      "Descrição": [
-        "a"
-      ],
-      "category": {
-        "id": "catecoriaID",
-        "category": "FRONT-END"
-      }
-    },
-    {
-      "id": "cf73",
-      "livroNome": [
-        "a"
-      ],
-      "Nome do Autor": [
-        "a"
-      ],
-      "Descrição": [
-        "a"
-      ],
-      "category": {
-        "id": "catecoriaID",
-        "category": "FRONT-END"
-      }
-    },
-    {
-      "id": "91a6",
-      "livroNome": [
-        "a"
-      ],
-      "Nome do Autor": [
-        "a"
-      ],
-      "Descrição": [
-        "a"
-      ],
-      "category": {
-        "id": "catecoriaID",
-        "category": "FRONT-END"
-      }
-    },
-    {
-      "id": "ffcb",
-      "livroNome": [
-        "a"
-      ],
-      "Nome do Autor": [
-        "a"
-      ],
-      "Descrição": [
-        "a"
+      "descricao": [
+        "DESCRIÇÃO 1"
       ],
       "category": {
         "id": "catecoriaID",
         "category": "FICÇÃO CIENTIFICA"
-      }
-    },
-    {
-      "id": "2218",
-      "livroNome": [
-        "a"
-      ],
-      "Nome do Autor": [
-        "a"
-      ],
-      "Descrição": [
-        "a"
-      ],
-      "category": {
-        "id": "catecoriaID",
-        "category": "BACK-END"
-      }
-    },
-    {
-      "id": "30ab",
-      "livroNome": [
-        "a"
-      ],
-      "Nome do Autor": [
-        "a"
-      ],
-      "Descrição": [
-        "a"
-      ],
-      "category": {
-        "id": "catecoriaID",
-        "category": "BACK-END"
-      }
-    },
-    {
-      "id": "7a10",
-      "livroNome": [
-        "b"
-      ],
-      "Nome do Autor": [
-        "b"
-      ],
-      "Descrição": [
-        "b"
-      ],
-      "category": {
-        "id": "catecoriaID",
-        "category": "FRONT-END"
       }
     }
   ],

@@ -1,8 +1,29 @@
+import { useState, useEffect } from 'react';
 import styles from './Livros.module.css';
 import Message from '../components/message/Message';
 import { useLocation } from 'react-router-dom';
 
+import Container from '../components/Container';
+import Cardbook from '../components/cardbook/Cardbook';
+
 export default function Livro(){
+
+    const[livros, setLivros] = useState([]);
+
+    useEffect(() => {
+        fetch(
+            'http://localhost:5000/books',
+            {
+                method: 'GET',
+                headers:{
+                    'Content-Type' : 'application/json'
+                },
+        })
+        .then((resp) => resp.json())
+        .then((data) => {setLivros(data)})
+        .catch((err) => {console.log(err)})
+    }, [])
+
 
     const location = useLocation();
     let message = '';
@@ -22,9 +43,19 @@ export default function Livro(){
                 message && (
                     <Message
                         msg="TESTE DE MENSAGEM"
-                        type="error"
+                        type="success"
                     />
                 )
+            }
+
+            {
+                livros.map((livro) => (
+                    <Cardbook
+                        id={livro.id}
+                        livro={livro.livroNome}
+                        autor={livro.autorNome}
+                        category={livro.category.category}/>
+                ))
             }
         </section>
     )

@@ -98,7 +98,7 @@ export default function NovoLivro(){
                     <Input
                         type="text"
                         text="Nome do Autor"
-                        name="Nome do Autor"
+                        name="autorNome"
                         placeholder="Digite aqui o nome do Autor"
                         handlerOnChange={handlerChangeBook}
                     />
@@ -108,7 +108,7 @@ export default function NovoLivro(){
                     <Input
                         type="text"
                         text="Descrição"
-                        name="Descrição"
+                        name="descricao"
                         placeholder="Digite aqui a Descrição"
                         handlerOnChange={handlerChangeBook}
                     />
