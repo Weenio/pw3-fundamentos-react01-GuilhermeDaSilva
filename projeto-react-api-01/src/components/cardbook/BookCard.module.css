@@ -26,7 +26,6 @@
 .category_text{
     display: flex;
     align-items: center;
-    justify-content: center;
 }
 
 .category_text span{
@@ -36,4 +35,67 @@
     border-radius: 50%;
     background-color: #CCC;
     margin-right: 5px;
+}
+
+/* CSS DE FORMATAÇÃO DOS BOTÕES DE ALTERAR/EXCLUIR */
+.book_card_actions{
+    margin-top: 1.2em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.book_card_actions a, 
+.book_card_actions button{
+    text-decoration: none;
+    border: none;
+    background-color: #FFF;
+    color: #222;
+    font-size: .9em;
+    padding: .6em 1em;
+    margin-right: 1em;
+    border: 1px solid #222;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: 30.0s;
+    cursor: pointer;
+}
+
+.book_card_actions a:hover, 
+.book_card_actions button:hover{
+    background-color: #FF4733;
+    color: #FFF;
+
+    border-radius: 30px;
+    padding: 1.2em 2em;
+
+    animation:rotação 0.5s;
+    animation-iteration-count: infinite;
+    animation-direction: alternate-reverse;
+}
+
+@keyframes rotação {
+    from {filter: hue-rotate(0deg)}
+    to {filter:hue-rotate(360deg)}
+
+    0%{
+        transform:translate(-10px, 3px) rotate(100deg)
+    }
+
+    25%{
+        transform:translate(3px, -20px) rotate(-250deg)
+    }
+
+    50%{
+        transform:translate(-20px, 3px) rotate(250deg)
+    }
+    
+    75%{
+        transform:translate(3px, -15px) rotate(-100deg)
+    }
+
+    100%{
+        transform:translate(-5px, 5px) rotate(1deg)
+    }
 }

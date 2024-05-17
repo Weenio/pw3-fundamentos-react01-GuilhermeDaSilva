@@ -9,6 +9,7 @@ import Cardbook from '../components/cardbook/Cardbook';
 export default function Livro(){
 
     const[livros, setLivros] = useState([]);
+    const{alert, setAlert} = useState('');
 
     useEffect(() => {
         fetch(
@@ -24,6 +25,21 @@ export default function Livro(){
         .catch((err) => {console.log(err)})
     }, [])
 
+    function removeBooks(id){
+        fetch(
+            `http://localhost:5000/books/${id}`,
+            {
+                method: 'DELETE',
+                headers:{
+                    'Content-Type' : 'application/json'
+                },
+        })
+        .then((resp) => resp.json())
+        .then((data) => {
+            setLivros(livros.filter((book_data) => book_data.id != id))
+        setAlert("LIVRO EXCLUIDO COM SUCESSO!!")})
+        .catch((err) => {console.log(err)})
+    }
 
     const location = useLocation();
     let message = '';
@@ -42,7 +58,7 @@ export default function Livro(){
             {
                 message && (
                     <Message
-                        msg="TESTE DE MENSAGEM"
+                        msg={alert}
                         type="success"
                     />
                 )
@@ -54,7 +70,9 @@ export default function Livro(){
                         id={livro.id}
                         livro={livro.livroNome}
                         autor={livro.autorNome}
-                        category={livro.category.category}/>
+                        category={livro.category.category}
+                        key={livro.id}
+                        handlerRemove={removeBooks}/>
                 ))
             }
         </section>

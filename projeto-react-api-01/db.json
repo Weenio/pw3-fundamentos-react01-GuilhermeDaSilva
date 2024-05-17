@@ -1,22 +1,5 @@
 {
-  "books": [
-    {
-      "id": "5c07",
-      "livroNome": [
-        "LIVRO 1"
-      ],
-      "autorNome": [
-        "AUTOR 1"
-      ],
-      "descricao": [
-        "DESCRIÇÃO 1"
-      ],
-      "category": {
-        "id": "catecoriaID",
-        "category": "FICÇÃO CIENTIFICA"
-      }
-    }
-  ],
+  "books": [],
   "categories": [
     {
       "id": "1",
