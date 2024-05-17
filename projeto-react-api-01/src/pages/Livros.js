@@ -9,7 +9,7 @@ import Cardbook from '../components/cardbook/Cardbook';
 export default function Livro(){
 
     const[livros, setLivros] = useState([]);
-    const{alert, setAlert} = useState('');
+    const{alert, setAlert} = useState("");
 
     useEffect(() => {
         fetch(
@@ -21,7 +21,9 @@ export default function Livro(){
                 },
         })
         .then((resp) => resp.json())
-        .then((data) => {setLivros(data)})
+        .then((data) => {
+            setLivros(data)
+            setAlert("Livro cadastrado com sucesso!")})
         .catch((err) => {console.log(err)})
     }, [])
 
@@ -37,7 +39,7 @@ export default function Livro(){
         .then((resp) => resp.json())
         .then((data) => {
             setLivros(livros.filter((book_data) => book_data.id != id))
-        setAlert("LIVRO EXCLUIDO COM SUCESSO!!")})
+            setAlert("LIVRO EXCLUIDO COM SUCESSO!!")})
         .catch((err) => {console.log(err)})
     }
 
