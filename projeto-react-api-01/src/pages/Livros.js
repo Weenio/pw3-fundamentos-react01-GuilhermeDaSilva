@@ -13,27 +13,33 @@ export default function Livro(){
 
     useEffect(() => {
         fetch(
-            'http://localhost:5000/books',
+            'http://localhost:5000/listagemLivros',
             {
                 method: 'GET',
+                mode: 'cors',
                 headers:{
-                    'Content-Type' : 'application/json'
+                    'Content-Type' : 'application/json',
+                    'Access-Control-Allow-Origin':'*',
+                    'Access-Control-Allow-Headers':'**'
                 },
         })
         .then((resp) => resp.json())
         .then((data) => {
-            setLivros(data)
+            setLivros(data.data)
             setAlert("Livro cadastrado com sucesso!")})
         .catch((err) => {console.log(err)})
     }, [])
 
     function removeBooks(id){
         fetch(
-            `http://localhost:5000/books/${id}`,
+            `http://localhost:5000/excluirLivro/${id}`,
             {
                 method: 'DELETE',
+                mode: 'cors',
                 headers:{
-                    'Content-Type' : 'application/json'
+                    'Content-Type' : 'application/json',
+                    'Access-Control-Allow-Origin':'*',
+                    'Access-Control-Allow-Headers':'**'
                 },
         })
         .then((resp) => resp.json())
@@ -69,11 +75,11 @@ export default function Livro(){
             {
                 livros.map((livro) => (
                     <Cardbook
-                        id={livro.id}
-                        livro={livro.livroNome}
-                        autor={livro.autorNome}
-                        category={livro.category.category}
-                        key={livro.id}
+                        id={livro.cod_livro}
+                        livro={livro.nome_livro}
+                        autor={livro.autor_livro}
+                        // category={livro.category.category}
+                        key={livro.cod_livro}
                         handlerRemove={removeBooks}/>
                 ))
             }
