@@ -76,26 +76,6 @@
 }
 
 @keyframes rotação {
-    from {filter: hue-rotate(0deg)}
-    to {filter:hue-rotate(360deg)}
-
-    0%{
-        transform:translate(-10px, 3px) rotate(100deg)
-    }
-
-    25%{
-        transform:translate(3px, -20px) rotate(-250deg)
-    }
-
-    50%{
-        transform:translate(-20px, 3px) rotate(250deg)
-    }
-    
-    75%{
-        transform:translate(3px, -15px) rotate(-100deg)
-    }
-
-    100%{
-        transform:translate(-5px, 5px) rotate(1deg)
-    }
+    from {filter: hue-rotate(0deg); margin-left: 0px;}
+    to {filter:hue-rotate(360deg); margin-left: 100px;}
 }

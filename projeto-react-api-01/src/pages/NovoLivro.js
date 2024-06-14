@@ -12,33 +12,32 @@ export default function NovoLivro(){
     const [livro, setLivro] = useState({})
     const navigate = useNavigate();
 
-    useEffect(() => {
+    // useEffect(() => {
 
-        fetch(
-            'http://localhost:5000/categories',
-            {
-                method: 'GET',
-                headers:{
-                    'Content-Type' : 'application/json'
-                }
-        }).then(
-            (resp) => resp.json()
-        ).then(
-            (data) => {
-                setCategorias(data)
-                console.log(data)
-            }
-        ).catch(
-            (err) => {
-                console.log(err)
-            }
-        )
-    }, [])
+    //     fetch(
+    //         'http://localhost:5000/categories',
+    //         {
+    //             method: 'GET',
+    //             headers:{
+    //                 'Content-Type' : 'application/json'
+    //             }
+    //     }).then(
+    //         (resp) => resp.json()
+    //     ).then(
+    //         (data) => {
+    //             setCategorias(data)
+    //             console.log(data)
+    //         }
+    //     ).catch(
+    //         (err) => {
+    //             console.log(err)
+    //         }
+    //     )
+    // }, [])
 
     function handlerChangeBook(event){
-
-        setLivro({...livro, [event.target.name] : [event.target.value]});
-
+        setLivro({...livro, [event.target.name] : event.target.value});
+        // console.log(livro)
     }
 
     function handlerChangeCategory(event){
@@ -50,14 +49,20 @@ export default function NovoLivro(){
     }
 
     function CreateLivro(livro){
+
+        console.log('CREATE:' + JSON.stringify(livro));
+
         fetch(
-            'http://localhost:5000/books',
+            'http://localhost:5000/inserirLivro',
             {
-                method: 'POST',
+                method:'POST',
+                mode:'cors',
                 headers:{
-                    'Content-Type' : 'application/json'
+                    'Content-Type':'application/json',
+                    'Access-Control-Allow-Origin':'*',
+                    'Access-Control-Allow-Headers':'*'
                 },
-            body : JSON.stringify(livro)
+            body:JSON.stringify(livro)
         }).then(
             (resp) => resp.json()
         ).then(
@@ -70,6 +75,7 @@ export default function NovoLivro(){
                 console.log(err)
             }
         )
+
     }
 
     function submit(event){
@@ -88,7 +94,8 @@ export default function NovoLivro(){
                     <Input
                         type="text"
                         text="Nome do Livro"
-                        name="livroNome"
+                        name="nome_livro"
+                        id="nome_livro"
                         placeholder="Digite aqui o nome do livro"
                         handlerOnChange={handlerChangeBook}
                     />
@@ -98,7 +105,8 @@ export default function NovoLivro(){
                     <Input
                         type="text"
                         text="Nome do Autor"
-                        name="autorNome"
+                        name="autor_livro"
+                        id="autor_livro"
                         placeholder="Digite aqui o nome do Autor"
                         handlerOnChange={handlerChangeBook}
                     />
@@ -108,7 +116,8 @@ export default function NovoLivro(){
                     <Input
                         type="text"
                         text="Descrição"
-                        name="descricao"
+                        name="descricao_livro"
+                        id="descricao_livro"
                         placeholder="Digite aqui a Descrição"
                         handlerOnChange={handlerChangeBook}
                     />
